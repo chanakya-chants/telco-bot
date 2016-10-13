@@ -1,0 +1,27 @@
+{
+  "name": "telco-bot",
+  "version": "1.0.0",
+  "description": "telco-bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "debug": "node-debug index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chanakya-chants/telco-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chanakya-chants/telco-bot/issues"
+  },
+  "homepage": "https://github.com/chanakya-chants/telco-bot#readme",
+  "dependencies": {
+    "chanakya": "^2.8.0",
+    "chanakya-facebook": "^1.1.1",
+    "lodash": "^4.16.4",
+    "node-fetch": "^1.6.3"
+  }
+}
