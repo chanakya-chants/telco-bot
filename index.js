@@ -1,7 +1,7 @@
 /**
  * Created by suman on 16/05/16.
  */
-
+'use strict';
 
 var C = require('chanakya'),
   Cfb = require('chanakya-facebook');

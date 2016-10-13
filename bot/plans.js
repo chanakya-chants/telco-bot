@@ -1,3 +1,5 @@
+'use strict';
+
 const C = require('chanakya');
 
 C.response('showplans', 'postback', (to, validatorResult) => {
