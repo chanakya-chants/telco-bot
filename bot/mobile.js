@@ -1,6 +1,9 @@
 /**
  * Created by suman on 13/10/16.
  */
+
+'use strict';
+
 const C = require('chanakya'),
   _ = require('lodash'),
   fetch = require('node-fetch');

@@ -1,3 +1,5 @@
+'use strict';
+
 const C = require('chanakya');
 
 C.response('start', 'doPostback', (to) => ({
