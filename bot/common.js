@@ -1,18 +1,19 @@
 'use strict';
 
-const C = require('chanakya');
+const C = require('chanakya'),
+  _ = require('lodash');
 
 /**
  * Expectations
  */
 
-C.expectation('greetings', ['isGreetings'], (res) => res ? ['askage'] : ['fail']);
+C.expectation('greetings', ['isGreetings'], (res) => res ? ['start'] : ['fail']);
 
 /**
  * Validators
  */
 
-C.validator('isGreetings', null, (message) => message == 'hi');
+C.validator('isGreetings', null, (message) => _.includes('hi,hello,hola, howdy,hey,hmm,hm,whatup,ok,yes'.split(','), message));
 
 /**
  * Responses
