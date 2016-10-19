@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/chanakya-chants/telco-bot#readme",
   "dependencies": {
-    "chanakya": "^2.8.0",
-    "chanakya-facebook": "^1.1.1",
+    "chanakya": "^3.1.0",
+    "chanakya-facebook": "^1.2.0",
     "lodash": "^4.16.4",
     "node-fetch": "^1.6.3"
   }
