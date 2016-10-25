@@ -232,7 +232,6 @@ C.validator('isMobile', null, (phone) => {
 });
 
 C.validator('isOTP', null, (otp, to) => {
-  console.log(arguments);
   const phoneNo = JSON.parse(to.mobile).international_format;
   return fetch(`https://aqueous-badlands-60821.herokuapp.com/api/verifyOTP/${phoneNo}/${otp}`);
 });
