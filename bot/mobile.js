@@ -25,7 +25,7 @@ C.response('sendOTP', 'otp', (to, phoneDetails) => ({
 }));
 
 C.response('wrongOTP', 'otp', (to, phoneDetails) => ({
-  text: `I have send an OTP to the phone number ${phoneDetails.international_format}. Please type your OTP below after you receive it.`
+  text: `Wrong OTP. Try again.`
 }));
 
 C.response('bill', 'doPostback', function() {
@@ -203,6 +203,7 @@ C.expectation('mobile', ['isMobile'], (res) => {
     };
   } else {
     if (res.valid) {
+      fetch(`https://aqueous-badlands-60821.herokuapp.com/api/sendOTP/${res.international_format}`);
       return {
         data: res,
         responses: ['sendOTP']
@@ -217,7 +218,7 @@ C.expectation('mobile', ['isMobile'], (res) => {
 });
 
 C.expectation('otp', ['isOTP'], (isOTP) => {
-  return isOTP ? {
+  return isOTP.valid ? {
     data: null,
     responses: ['bill']
   } : {
@@ -230,6 +231,8 @@ C.validator('isMobile', null, (phone) => {
   return fetch(`http://apilayer.net/api/validate?access_key=eba101687da317945a45f798464256da&number=${phone}&country_code=&format=1`)
 });
 
-C.validator('isOTP', null, (otp) => {
-  return +otp === 1234
+C.validator('isOTP', null, (otp, to) => {
+  console.log(arguments);
+  const phoneNo = JSON.parse(to.mobile).international_format;
+  return fetch(`https://aqueous-badlands-60821.herokuapp.com/api/verifyOTP/${phoneNo}/${otp}`);
 });
